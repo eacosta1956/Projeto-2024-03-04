@@ -5,27 +5,27 @@ const pessoa = { nome: 'Eldon', idade: 67, cidade: 'Rio de Janeiro', avatar: req
 
 function SaudacaoPersonalizada({ saudacao = "Olá", nome = "Usuário", style }) { // Declaração de um componente funcional 'SaudacaoPersonalizada' que recebe props como saudacao, nome e style
   return (
-    <View style={[styles.saudacaoContainer, style]}> {/* Início da definição do layout com um estilo personalizado */}
-      <Text>{saudacao}, {nome}!</Text> {/* Exibição da saudação com o nome fornecido */}
+    <View style={[styles.saudacaoContainer, style]}> 
+      <Text>{saudacao}, {nome}!</Text> 
     </View>
   );
 }
 
 const Saudacao = ({ nome}) => { // Declaração de um componente funcional 'Saudacao' que recebe apenas o nome como prop
   return (
-    <View style={styles.container}> {/* Início da definição do layout com estilo padrão */}
-      <Text>Olá, {nome}!</Text> {/* Exibição da saudação padrão com o nome fornecido */}
+    <View style={styles.container}> 
+      <Text>Olá, {nome}!</Text> 
     </View>
   );
 };
 
 const ExibirPessoa = ({ nome, idade, cidade }) => { // Declaração de um componente funcional 'ExibirPessoa' que recebe as propriedades de uma pessoa como props
   return (
-    <View style={styles.container}> {/* Início da definição do layout com estilo padrão */}
-      <Image source={pessoa.avatar} style={styles.avatar} /> {/* Exibição da imagem de avatar */}
-      <Text>Nome: {nome}</Text> {/* Exibição do nome */}
-      <Text>Idade: {idade}</Text> {/* Exibição da idade */}
-      <Text>Cidade: {cidade}</Text> {/* Exibição da cidade */}
+    <View style={styles.container}> 
+      <Image source={pessoa.avatar} style={styles.avatar} /> 
+      <Text>Nome: {nome}</Text> 
+      <Text>Idade: {idade}</Text> 
+      <Text>Cidade: {cidade}</Text> 
     </View>
   );
 };
@@ -36,11 +36,10 @@ export default function App() { // Declaração do componente funcional principa
     setSaudacao(getHora()); // Atualiza o estado de saudação com base na hora atual
   }, []);
   return (
-    <View style={styles.appContainer}> {/* Início da definição do layout principal com estilo padrão */}
-      {/* use o componente funcional personalizado com estilos personalizados */}
-      <SaudacaoPersonalizada saudacao={saudacao} nome={pessoa.nome} style={styles.saudacaoPersonalizada} /> {/* Exibição do componente 'SaudacaoPersonalizada' com propriedades específicas */}
-      <Saudacao nome={pessoa.nome} /> {/* Exibição do componente 'Saudacao' com o nome fornecido */}
-      <ExibirPessoa {...pessoa} /> {/* Exibição do componente 'ExibirPessoa' com as propriedades da pessoa */}
+    <View style={styles.appContainer}> 
+      <SaudacaoPersonalizada saudacao={saudacao} nome={pessoa.nome} style={styles.saudacaoPersonalizada} /> 
+      <Saudacao nome={pessoa.nome} /> 
+      <ExibirPessoa {...pessoa} /> 
     </View>
   );
 }
