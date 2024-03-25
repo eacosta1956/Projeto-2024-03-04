@@ -1,0 +1,1 @@
+Este código React Native é uma aplicação simples que exibe uma saudação personalizada com base no horário atual do dia, usando componentes funcionais e hooks. Ele também mostra informações sobre uma pessoa fictícia.
